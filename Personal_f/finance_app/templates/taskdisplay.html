@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Display</title>
+</head>
+<body>
+    {% if task %}
+    <ul>
+        {% for i in task %}
+        <li>
+            {{ i.id }} | {{ i.Item_name }} | {{ i.description }} | {{ i.Amount }} | {{i.Date_of_purchase}} <br>
+            <a href="{% url 'taskup' i.id %}">Update</a> | 
+            <a href="{% url 'delete' i.id %}">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No task to show!!</p>
+    {% endif %}
+</body>
+</html>

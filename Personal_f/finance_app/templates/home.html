@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+</head>
+<body>
+    <h1> Expense Report </h1> 
+    <form action="" method="post">
+        {% csrf_token %}
+        <label> Item_name </label>
+        <input type="text" name="Item_name">
+        <label> Description </label>
+        <input type="text" name="description">
+        <label> Amount </label>
+        <input type="text" name="Amount">
+        <label> Date_of_purchase </label>
+        <input type="text" name="Date_of_purchase">
+        <button type="submit"> Add Task </button>
+    </form>
+    <br>
+    <a href="{% url "task" %}"> Task Display Page</a>
+</body>
+</html>
